@@ -130,12 +130,18 @@ a:hover { text-decoration: underline; }
 
 .cite-card {
   display: flex;
+  align-items: center;   /* ⭐ 让子元素上下居中 */
   gap: 14px;
+
+  width: 100%;
   padding: 12px;
+
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 12px;
   box-shadow: var(--shadow);
+
+  transition: transform .16s ease, box-shadow .16s ease;
 }
 
 .cite-card .thumb {

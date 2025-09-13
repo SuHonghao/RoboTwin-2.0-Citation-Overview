@@ -1,7 +1,10 @@
 import pandas as pd
+import os
+import json
+from datetime import datetime
 
 # 读取 Excel 文件
-df = pd.read_excel("papers_v2.0.xlsx")   # 确保和脚本放在同一文件夹
+df = pd.read_excel("generate_cards/papers.xlsx")
 
 html_cards = []
 
@@ -41,8 +44,31 @@ html_page = f"""
 </html>
 """
 
-# 输出结果
-with open("card_v2.0.html", "w", encoding="utf-8") as f:
+# 输出到 generate_cards 文件夹
+output_path = os.path.join("generate_cards", "card.html")
+with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_page)
 
-print("✅ Done：card_v2.0.html")
+print(f"✅ Done：{output_path}")
+
+
+
+# --- 统计并导出 stats.json ---
+
+# 建议：仅统计“有效行”（有 title & link）
+valid_df = df.dropna(subset=["title", "link"])
+num_papers = int(len(valid_df))
+
+stats = {
+    "num_papers": num_papers,
+    "source": "generate_cards/papers.xlsx",   # 按你的实际文件名/路径改
+    "last_updated": datetime.now().strftime("%Y-%m-%d")
+}
+
+# 存在 generate_cards/ 下（和你的表同目录）
+stats_path = os.path.join("generate_cards", "stats.json")
+with open(stats_path, "w", encoding="utf-8") as f:
+    json.dump(stats, f, ensure_ascii=False, indent=2)
+
+print(f"✅ Stats written: {stats_path}")
+
