@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lastUpdatedEl = document.getElementById('last-updated');
 
   // 1️⃣ 加载卡片 HTML
-  fetch('generate_cards/card.html', { cache: 'no-cache' })
+  fetch('./generate_cards/card.html', { cache: 'no-cache' })
     .then(res => {
       if (!res.ok) throw new Error(`Failed to load: ${res.status}`);
       return res.text();
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   // 2️⃣ 加载统计数据
-  fetch('generate_cards/stats.json', { cache: 'no-cache' })
+  fetch('./generate_cards/stats.json', { cache: 'no-cache' })
     .then(res => {
       if (!res.ok) throw new Error(`Failed to load stats: ${res.status}`);
       return res.json();
