@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RoboTwin Connect</title>
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -22,7 +21,7 @@
       <!-- 论文简介 -->
       <section class="paper-hero paper-hero--stack" aria-labelledby="paper-title">
         <div class="thumb">
-          <img src="https://free.picui.cn/free/2025/09/13/68c537a132fa7.jpg" alt="robotwin-text-logo" />
+          <img src="img/title_img/robotwin-text-logo.jpg" alt="robotwin-text-logo" />
         </div>
         <h2 id="paper-title" class="paper-title">
           RoboTwin 2.0: A Scalable Data Generator and Benchmark with<br>
@@ -32,7 +31,7 @@
         <nav class="linkbar" aria-label="links">
           <a class="chip" href="https://robotwin-platform.github.io/" target="_blank" rel="noopener">🔗 Webpage</a>
           <a class="chip" href="https://arxiv.org/abs/2506.18088" target="_blank" rel="noopener">📄 arXiv</a>
-          <a class="chip" href="https://arxiv.org/pdf/2506.18088" target="_blank" rel="noopener">🖺 PDF</a>
+          <a class="chip" href="https://arxiv.org/pdf/2506.18088" target="_blank" rel="noopener">📄 PDF</a>
           <a class="chip" href="https://github.com/robotwin-Platform/RoboTwin" target="_blank" rel="noopener">💻 Code</a>
           <a class="chip" href="https://robotwin-platform.github.io/doc/" target="_blank" rel="noopener">📓 Document</a>
         </nav>
@@ -40,25 +39,23 @@
 
       <hr class="divider" />
 
-      <!-- 引用论文 -->
+      <!-- 引用论文（加载 card.html） -->
       <section aria-label="Citing Papers">
         <div class="section-top">
           <h2 class="section-title">
             Currently cited by <span id="paper-count">--</span> papers
           </h2>
-
         </div>
-        <div id="panel20" class="tabpanel active"></div>
+
+        <div id="panel20" class="cite-grid"></div>
       </section>
     </main>
 
     <footer class="footer" role="contentinfo">
       Last updated: <span id="last-updated">--</span>
     </footer>
-
   </div>
 
   <script src="app.js"></script>
 </body>
 </html>
-
