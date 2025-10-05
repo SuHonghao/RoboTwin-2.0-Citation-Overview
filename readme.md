@@ -19,9 +19,7 @@ pip install pandas openpyxl
 ### 1️⃣ 编辑数据文件
 打开文件：
 ```
-
 generate_cards/papers.xlsx
-
 ````
 
 在表格中填写或修改论文信息，常见字段包括：
